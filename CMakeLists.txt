@@ -42,7 +42,7 @@ target_link_libraries(qhotkey ${LIBS})
 
 target_include_directories(qhotkey
     PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/QHotkey>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/QHotkey>
         $<INSTALL_INTERFACE:include>)
 
 set_target_properties(qhotkey PROPERTIES
@@ -62,8 +62,8 @@ install(
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES
-    ${CMAKE_SOURCE_DIR}/QHotkey/qhotkey.h
-    ${CMAKE_SOURCE_DIR}/QHotkey/QHotkey
+    ${CMAKE_CURRENT_SOURCE_DIR}/QHotkey/qhotkey.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/QHotkey/QHotkey
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/)
 install(EXPORT QHotkeyConfig DESTINATION ${INSTALL_CONFIGDIR})
 
